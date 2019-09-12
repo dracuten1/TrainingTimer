@@ -1,5 +1,7 @@
 {
   "name": "TrainingTimer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
