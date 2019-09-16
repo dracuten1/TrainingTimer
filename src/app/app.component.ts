@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,18 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private nativeAudio: NativeAudio
   ) {
     this.initializeApp();
+    this.nativeAudio.preloadSimple('uniqueId1', '../assets/sound/sucess.wav').then(this.onSuccess, this.onError);
   }
-
+  onSuccess(e) {
+    console.log(e);
+  }
+  onError(e) {
+    console.log(e);
+  }
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

@@ -8,15 +8,18 @@ export class TimeConvertter {
         return result;
     }
     public static IntToTimeString(time: number): string {
-        let result: '';
+        let result = '';
         let retain = time;
-        let redudancy = 0;
-        do {
-            redudancy = retain % 60;
-        } while (true)
-        {
-
+        if (retain / 3600 > 0) {
+            result = (retain / 3600).toString();
+            retain = retain % 3600;
         }
-        return '0';
+        if (retain / 3600 > 0) {
+            result = (retain / 3600).toString() + ':';
+            retain = retain % 3600;
+        }
+        result = result + (retain / 60).toString() + ':';
+        result = (retain % 60).toString();
+        return result;
     }
 }

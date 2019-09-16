@@ -6,15 +6,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    <ion-button (click)="StartTimer()">
-      Start
-    </ion-button>
-    
-  </div>
-  <ion-item>
-    <ion-label>Date</ion-label>
-    <ion-datetime displayFormat="mm:ss" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
+<ion-content text-center class="vertical-align-content" >
+  <ion-grid class="full-size">
+    <ion-row>
+      <ion-col style="font-size:30px">
+          <ion-label>{{ this.timerCouter.toString() }}</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="startTimer()">Start</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

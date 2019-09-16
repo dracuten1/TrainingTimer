@@ -1,1 +1,15 @@
-
+.vertical-align-content 
+{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100%;
+}
+.full-size{
+    height: 100%;
+}
+.scroll-content{
+    justify-content: center;
+	display: flex!important;
+ 	align-items: center!important;
+}

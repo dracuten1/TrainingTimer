@@ -1,3 +1,4 @@
+import { TimerchineComponent } from './../component/timerchine/timerchine.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -18,6 +19,6 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, TimerchineComponent]
 })
-export class HomePageModule {}
+export class HomePageModule { }
