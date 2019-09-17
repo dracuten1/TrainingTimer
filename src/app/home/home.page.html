@@ -6,16 +6,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content text-center class="vertical-align-content" >
+<ion-content text-center class="vertical-align-content">
   <ion-grid class="full-size">
-    <ion-row>
+    <ion-row *ngIf="this.isTraining">
       <ion-col style="font-size:30px">
-          <ion-label>{{ this.timerCouter.toString() }}</ion-label>
+        <ion-label>{{ this.timerCouter.toString() }}</ion-label>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
+    <ion-row *ngIf="!this.isTraining">
+      <ion-col >
         <ion-button (click)="startTimer()">Start</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="this.isTraining">
+      <ion-col *ngIf="!this.isPausing">
+        <ion-button (click)="pauseTimer()">Pause</ion-button>
+      </ion-col>
+      <ion-col *ngIf="this.isPausing">
+        <ion-button (click)="pauseTimer()">Continue</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="this.isTraining">
+      <ion-col >
+        <ion-button (click)="stopTimer()">Stop</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
